@@ -16,14 +16,13 @@ function getTransporter() {
   }
 
   transporter = nodemailer.createTransport({
-    host,
-    port,
-    secure: false, // Mailtrap uses TLS = false
-    auth: {
-      user,
-      pass,
-    },
-  });
+  service: "gmail",
+  auth: {
+    user,
+    pass,
+  },
+});
+
 
   return transporter;
 }
